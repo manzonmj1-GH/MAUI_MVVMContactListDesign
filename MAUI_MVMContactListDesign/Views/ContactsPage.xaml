@@ -1,0 +1,44 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_MVMContactListDesign.Views.ContactsPage"
+             Title="Contacts Page">
+
+    <VerticalStackLayout Padding="10">
+
+        <CollectionView ItemsSource="{Binding Contacts}"
+                SelectionMode="Single"
+                SelectionChanged="OnSelectionChanged">
+
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="Orchid"
+                            StrokeThickness="2"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10"
+                            Margin="5"
+                            HeightRequest="100">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Opacity="0.2"
+                                    Offset="2,2"
+                                    Radius="5"/>
+                        </Border.Shadow>
+
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Email}" FontSize="12"/>
+                        </VerticalStackLayout>
+
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <Button Text="Add A New Contact"
+                Command="{Binding GoToAddContactCommand}" />
+
+    </VerticalStackLayout>
+</ContentPage>

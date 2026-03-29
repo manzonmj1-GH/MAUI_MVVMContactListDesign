@@ -1,0 +1,18 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_MVMContactListDesign.Views.ContactDetailsPage"
+             Title=" Contact Details Page">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <Entry Text="{Binding Contact.Name}" IsEnabled="{Binding IsEditing}" />
+        <Entry Text="{Binding Contact.Email}" IsEnabled="{Binding IsEditing}" />
+        <Entry Text="{Binding Contact.Phone}" IsEnabled="{Binding IsEditing}" />
+        <Editor Text="{Binding Contact.Description}" IsEnabled="{Binding IsEditing}" />
+
+        <Button Text="Edit" Command="{Binding EditCommand}" BackgroundColor="LightBlue"/>
+        <Button Text="Save" Command="{Binding SaveCommand}" BackgroundColor="Green"/>
+        <Button Text="Back" Command="{Binding GoBackCommand}" BackgroundColor="MediumPurple"/>
+
+    </VerticalStackLayout>
+</ContentPage>
